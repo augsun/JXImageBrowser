@@ -7,6 +7,38 @@
 //
 
 #import "AppDelegate.h"
+#import "JXMomentVC.h"
+#import <UIImageView+WebCache.h>
+
+
+@interface JXNavigationBar : UINavigationBar
+
+@end
+
+@implementation JXNavigationBar {
+    CGSize _previousSize;
+}
+
+- (CGSize)sizeThatFits:(CGSize)size {
+    size = [super sizeThatFits:size];
+    if ([UIApplication sharedApplication].statusBarHidden) {
+        size.height = 64;
+    }
+    return size;
+}
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    if (!CGSizeEqualToSize(self.bounds.size, _previousSize)) {
+        _previousSize = self.bounds.size;
+        [self.layer removeAllAnimations];
+        [self.layer.sublayers enumerateObjectsUsingBlock:^(CALayer * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            [obj removeAllAnimations];
+        }];
+    }
+}
+
+@end
 
 @interface AppDelegate ()
 
@@ -16,7 +48,18 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    
+    [[SDImageCache sharedImageCache] cleanDisk];
+
+    
+    UINavigationController *navi = [[UINavigationController alloc] initWithNavigationBarClass:[JXNavigationBar class]
+                                                                                 toolbarClass:[UIToolbar class]];
+    [navi addChildViewController:[[JXMomentVC alloc] init]];
+    self.window.rootViewController = navi;
+
+    
+    
     return YES;
 }
 

@@ -1,0 +1,13 @@
+//
+//  SBCommitOrderVC.h
+//  ShiBa
+//
+//  Created by shiba_iosJX on 11/5/15.
+//  Copyright © 2015 ShiBa. All rights reserved.
+//
+
+#import "SBBaseVC.h"
+
+@interface SBCommitOrderVC : SBBaseVC
+
+@end

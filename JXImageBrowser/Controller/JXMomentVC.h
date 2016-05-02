@@ -1,15 +1,13 @@
 //
-//  ViewController.h
+//  JXMomentVC.h
 //  JXImageBrowser
 //
-//  Created by shiba_iosJX on 4/24/16.
+//  Created by shiba_iosJX on 5/2/16.
 //  Copyright © 2016 CoderSun. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface JXMomentVC : UIViewController
 
 @end
-
