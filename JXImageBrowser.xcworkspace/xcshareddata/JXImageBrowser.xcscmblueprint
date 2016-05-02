@@ -3,19 +3,14 @@
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
     "77253ae9-3eb3-4e0a-bb6f-2728a1585e32++9429" : {
 
-    },
-    "77253ae9-3eb3-4e0a-bb6f-2728a1585e32++5826" : {
-
     }
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
-    "77253ae9-3eb3-4e0a-bb6f-2728a1585e32++5826" : 0,
     "77253ae9-3eb3-4e0a-bb6f-2728a1585e32++9429" : 0,
     "0DAC78B45580B95957FE25947E4073D8E1CB1ACC" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "E103B02B-0D2C-4BC6-B01C-81B85CF426D2",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "77253ae9-3eb3-4e0a-bb6f-2728a1585e32++5826" : "JXImageBrowser\/JXImageBrowser\/View\/",
     "77253ae9-3eb3-4e0a-bb6f-2728a1585e32++9429" : "JXImageBrowser\/JXImageBrowser\/Model\/",
     "0DAC78B45580B95957FE25947E4073D8E1CB1ACC" : "JXImageBrowser\/"
   },
@@ -31,7 +26,7 @@
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "svn:\/\/192.168.0.95",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "77253ae9-3eb3-4e0a-bb6f-2728a1585e32++5826"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "77253ae9-3eb3-4e0a-bb6f-2728a1585e32++9429"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "svn:\/\/192.168.0.95",

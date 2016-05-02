@@ -8,13 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		7103761D1CCDFB5900CCAFD3 /* JXImageBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7103761C1CCDFB5900CCAFD3 /* JXImageBrowser.m */; };
-		713948361CD7900E008F45DC /* JXMomentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7139482D1CD7900E008F45DC /* JXMomentModel.m */; };
-		713948371CD7900E008F45DC /* JXMomentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 713948301CD7900E008F45DC /* JXMomentCell.m */; };
-		713948381CD7900E008F45DC /* JXMomentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 713948311CD7900E008F45DC /* JXMomentCell.xib */; };
-		713948391CD7900E008F45DC /* JXMomentImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 713948331CD7900E008F45DC /* JXMomentImageCell.m */; };
-		7139483A1CD7900E008F45DC /* JXMomentImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 713948341CD7900E008F45DC /* JXMomentImageCell.xib */; };
-		7139483E1CD7930D008F45DC /* JXMomentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7139483C1CD7930D008F45DC /* JXMomentVC.m */; };
-		7139483F1CD7930D008F45DC /* JXMomentVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7139483D1CD7930D008F45DC /* JXMomentVC.xib */; };
 		71661E011CCD1A1500B33E78 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 71661E001CCD1A1500B33E78 /* main.m */; };
 		71661E041CCD1A1500B33E78 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 71661E031CCD1A1500B33E78 /* AppDelegate.m */; };
 		71661E0A1CCD1A1500B33E78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71661E081CCD1A1500B33E78 /* Main.storyboard */; };
@@ -28,17 +21,6 @@
 		6C4ED41E274C3B4E52160CD6 /* libPods-JXImageBrowser.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JXImageBrowser.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7103761B1CCDFB5900CCAFD3 /* JXImageBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXImageBrowser.h; sourceTree = "<group>"; };
 		7103761C1CCDFB5900CCAFD3 /* JXImageBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXImageBrowser.m; sourceTree = "<group>"; };
-		7139482C1CD7900E008F45DC /* JXMomentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXMomentModel.h; sourceTree = "<group>"; };
-		7139482D1CD7900E008F45DC /* JXMomentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXMomentModel.m; sourceTree = "<group>"; };
-		7139482F1CD7900E008F45DC /* JXMomentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXMomentCell.h; sourceTree = "<group>"; };
-		713948301CD7900E008F45DC /* JXMomentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXMomentCell.m; sourceTree = "<group>"; };
-		713948311CD7900E008F45DC /* JXMomentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JXMomentCell.xib; sourceTree = "<group>"; };
-		713948321CD7900E008F45DC /* JXMomentImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXMomentImageCell.h; sourceTree = "<group>"; };
-		713948331CD7900E008F45DC /* JXMomentImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXMomentImageCell.m; sourceTree = "<group>"; };
-		713948341CD7900E008F45DC /* JXMomentImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JXMomentImageCell.xib; sourceTree = "<group>"; };
-		7139483B1CD7930D008F45DC /* JXMomentVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXMomentVC.h; sourceTree = "<group>"; };
-		7139483C1CD7930D008F45DC /* JXMomentVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXMomentVC.m; sourceTree = "<group>"; };
-		7139483D1CD7930D008F45DC /* JXMomentVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JXMomentVC.xib; sourceTree = "<group>"; };
 		71661DFC1CCD1A1500B33E78 /* JXImageBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JXImageBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71661E001CCD1A1500B33E78 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		71661E021CCD1A1500B33E78 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -88,38 +70,6 @@
 			path = JXImageBrowser;
 			sourceTree = "<group>";
 		};
-		713948281CD7900E008F45DC /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				7139483B1CD7930D008F45DC /* JXMomentVC.h */,
-				7139483C1CD7930D008F45DC /* JXMomentVC.m */,
-				7139483D1CD7930D008F45DC /* JXMomentVC.xib */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		7139482B1CD7900E008F45DC /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				7139482C1CD7900E008F45DC /* JXMomentModel.h */,
-				7139482D1CD7900E008F45DC /* JXMomentModel.m */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		7139482E1CD7900E008F45DC /* View */ = {
-			isa = PBXGroup;
-			children = (
-				7139482F1CD7900E008F45DC /* JXMomentCell.h */,
-				713948301CD7900E008F45DC /* JXMomentCell.m */,
-				713948311CD7900E008F45DC /* JXMomentCell.xib */,
-				713948321CD7900E008F45DC /* JXMomentImageCell.h */,
-				713948331CD7900E008F45DC /* JXMomentImageCell.m */,
-				713948341CD7900E008F45DC /* JXMomentImageCell.xib */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		71661DF31CCD1A1500B33E78 = {
 			isa = PBXGroup;
 			children = (
@@ -144,9 +94,6 @@
 				710376191CCDFB5900CCAFD3 /* libs */,
 				71661E021CCD1A1500B33E78 /* AppDelegate.h */,
 				71661E031CCD1A1500B33E78 /* AppDelegate.m */,
-				713948281CD7900E008F45DC /* Controller */,
-				7139482B1CD7900E008F45DC /* Model */,
-				7139482E1CD7900E008F45DC /* View */,
 				71661E081CCD1A1500B33E78 /* Main.storyboard */,
 				71661E0B1CCD1A1500B33E78 /* Assets.xcassets */,
 				71661E0D1CCD1A1500B33E78 /* LaunchScreen.storyboard */,
@@ -232,12 +179,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7139483F1CD7930D008F45DC /* JXMomentVC.xib in Resources */,
 				71661E0F1CCD1A1500B33E78 /* LaunchScreen.storyboard in Resources */,
-				7139483A1CD7900E008F45DC /* JXMomentImageCell.xib in Resources */,
 				71661E0C1CCD1A1500B33E78 /* Assets.xcassets in Resources */,
 				71661E0A1CCD1A1500B33E78 /* Main.storyboard in Resources */,
-				713948381CD7900E008F45DC /* JXMomentCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,11 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7103761D1CCDFB5900CCAFD3 /* JXImageBrowser.m in Sources */,
-				7139483E1CD7930D008F45DC /* JXMomentVC.m in Sources */,
-				713948371CD7900E008F45DC /* JXMomentCell.m in Sources */,
-				713948361CD7900E008F45DC /* JXMomentModel.m in Sources */,
 				71661E041CCD1A1500B33E78 /* AppDelegate.m in Sources */,
-				713948391CD7900E008F45DC /* JXMomentImageCell.m in Sources */,
 				71661E011CCD1A1500B33E78 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
