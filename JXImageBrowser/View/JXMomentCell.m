@@ -10,12 +10,7 @@
 #import "JXMomentImageCell.h"
 #import <UIImageView+WebCache.h>
 
-@interface JXMomentCell ()
-
-<
-UICollectionViewDelegate,
-UICollectionViewDataSource
->
+@interface JXMomentCell () <UICollectionViewDelegate, UICollectionViewDataSource>
 
 // P
 @property (weak, nonatomic) IBOutlet UIImageView        *imgViewPortrait;
