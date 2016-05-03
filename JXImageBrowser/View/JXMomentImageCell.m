@@ -2,8 +2,8 @@
 //  SBFreeDetailCell.m
 //  JXImageBrowser
 //
-//  Created by shiba_iosJX on 11/4/15.
-//  Copyright © 2015 ShiBa. All rights reserved.
+//  Created by CoderSun on 4/3/16.
+//  Copyright © 2015 CoderSun. All rights reserved.
 //
 
 #import "JXMomentImageCell.h"
@@ -15,7 +15,16 @@
 @implementation JXMomentImageCell
 
 - (void)awakeFromNib {
-    // Initialization code
+
 }
 
 @end
+
+
+
+
+
+
+
+
+

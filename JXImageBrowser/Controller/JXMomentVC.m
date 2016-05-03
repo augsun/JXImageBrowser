@@ -2,23 +2,17 @@
 //  JXMomentVC.m
 //  JXImageBrowser
 //
-//  Created by shiba_iosJX on 5/2/16.
+//  Created by CoderSun on 5/2/16.
 //  Copyright © 2016 CoderSun. All rights reserved.
 //
 
 #import "JXMomentVC.h"
 #import "JXMomentCell.h"
 
-@interface JXMomentVC ()
-
-<
-UITableViewDelegate,
-UITableViewDataSource
->
+@interface JXMomentVC () <UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet    UITableView                         *tableView;
 @property (nonatomic, strong)           NSMutableArray <JXMomentModel *>    *arrDatas;
-
 
 @end
 
@@ -26,22 +20,15 @@ UITableViewDataSource
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.title = @"JXImageBrowser";
     
+    //
     _arrDatas = [[NSMutableArray alloc] init];
     UINib *nibMomentCell = [UINib nibWithNibName:NSStringFromClass([JXMomentCell class]) bundle:nil];
     [self.tableView registerNib:nibMomentCell forCellReuseIdentifier:@"momentCell"];
     [self.tableView setTableFooterView:[[UIView alloc] init]];
     
-#if 0
-    https://raw.githubusercontent.com/augsun/Resources/master/JXImageBrowser/101749.jpg
-    101749.jpg	355354.jpg	361764.jpg	622388.jpg	931282.jpg
-    107107.jpg	355362.jpg	365425.jpg	622394.jpg	938902.jpg
-    107500.jpg	356022.jpg	393569.jpg	622506.jpg	950919.jpg
-    108389.jpg	356770.jpg	393593.jpg	623818.jpg	969118.jpg
-    111258.jpg	360108.jpg	409690.jpg	739017.jpg	970400.jpg
-    112793.jpg	361080.jpg	573433.jpg	849617.jpg	986765.jpg
-#endif
-    
+    //
     NSArray *arrJSON = @[
                          @{
                              @"user_name":@"CoderSun",
@@ -51,7 +38,6 @@ UITableViewDataSource
                                      @{@"imgUrlSub":@"107500"},
                                      @{@"imgUrlSub":@"938902"},
                                      @{@"imgUrlSub":@"931282"},
-                                     @{@"imgUrlSub":@"361764"},
                                      ],
                              },
                          @{
@@ -68,6 +54,8 @@ UITableViewDataSource
                                      @{@"imgUrlSub":@"950919"},
                                      @{@"imgUrlSub":@"986765"},
                                      @{@"imgUrlSub":@"739017"},
+                                     @{@"imgUrlSub":@"361080"},
+                                     @{@"imgUrlSub":@"361764"},
                                      ],
                              },
                          @{
@@ -96,7 +84,6 @@ UITableViewDataSource
                              @"imgs":@[
                                      @{@"imgUrlSub":@"112793"},
                                      @{@"imgUrlSub":@"360108"},
-                                     @{@"imgUrlSub":@"361080"},
                                      ],
                              },
                          @{
@@ -116,8 +103,7 @@ UITableViewDataSource
                          ];
     
     for (NSDictionary *dicEnum in arrJSON) {
-        JXMomentModel *jxModel = [[JXMomentModel alloc] initWithDic:dicEnum];
-        [self.arrDatas addObject:jxModel];
+        [self.arrDatas addObject:[[JXMomentModel alloc] initWithDic:dicEnum]];
     }
     
     [self.tableView reloadData];
@@ -128,7 +114,7 @@ UITableViewDataSource
     
 }
 
-#pragma mark -
+#pragma mark
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.arrDatas.count;
 }

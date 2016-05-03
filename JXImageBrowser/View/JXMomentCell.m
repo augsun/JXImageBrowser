@@ -2,14 +2,12 @@
 //  SBAllCommentCell.m
 //  JXImageBrowser
 //
-//  Created by shiba_iosJX on 11/3/15.
-//  Copyright © 2015 ShiBa. All rights reserved.
+//  Created by CoderSun on 4/3/16.
+//  Copyright © 2015 CoderSun. All rights reserved.
 //
 
 #import "JXMomentCell.h"
 #import "JXMomentImageCell.h"
-
-#import "JXImageBrowser.h"
 #import <UIImageView+WebCache.h>
 
 @interface JXMomentCell ()
@@ -19,13 +17,18 @@ UICollectionViewDelegate,
 UICollectionViewDataSource
 >
 
-// 属性
-@property (weak, nonatomic) IBOutlet UILabel            *lblName;               // 用户昵称
-@property (weak, nonatomic) IBOutlet UICollectionView   *collectionView;        // 图片
+// P
+@property (weak, nonatomic) IBOutlet UIImageView        *imgViewPortrait;
+@property (weak, nonatomic) IBOutlet UILabel            *lblName;
+@property (weak, nonatomic) IBOutlet UICollectionView   *collectionView;
 
-// 约束
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *height_collectionView; // 图片collectionView的高
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *width_collectionView;  // 图片collectionView的宽
+// A
+
+// C
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *space_collViewToTop;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *space_collViewToLeft;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *height_collView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *width_collView;
 
 //
 
@@ -34,50 +37,45 @@ UICollectionViewDataSource
 @implementation JXMomentCell
 
 - (void)awakeFromNib {
-    [self setLayoutMargins:UIEdgeInsetsZero];
-    [self setSeparatorInset:UIEdgeInsetsZero];
-    
-    [_collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([JXMomentImageCell class]) bundle:nil] forCellWithReuseIdentifier:@"cell"];
+    UINib *nibCollCell = [UINib nibWithNibName:NSStringFromClass([JXMomentImageCell class]) bundle:nil];
+    [_collectionView registerNib:nibCollCell forCellWithReuseIdentifier:@"collCell"];
     _collectionView.delegate = self;
     _collectionView.dataSource = self;
     
+    _space_collViewToTop.constant = S_COLL_TO_TOP;
+    _space_collViewToLeft.constant = S_COLL_TO_LEFT;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 }
 
-// ====================================================================================================
-#pragma mark -
-
-
+#pragma mark
 - (void)setModel:(JXMomentModel *)model {
     _model = model;
     
-    _height_collectionView.constant = self.model.hCollView;
-    _width_collectionView.constant = self.model.wCollView;
+    _height_collView.constant = self.model.hCollView;
+    _width_collView.constant = self.model.wCollView;
     
-    [self.collectionView reloadData];
-
-    // 昵称
+    _imgViewPortrait.image = [UIImage imageNamed:@"portrait"];
     _lblName.text = _model.strUserName;
-    
+    [self.collectionView reloadData];
 }
 
-#pragma mark UICollectionView
+#pragma mark
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.model.arrMinUrls.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    JXMomentImageCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
+    JXMomentImageCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"collCell" forIndexPath:indexPath];
     
     JXImage *jxImage = self.model.arrJXImages[indexPath.item];
     [cell.imgView sd_setImageWithURL:self.model.arrMinUrls[indexPath.item]
                     placeholderImage:nil
                            completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
         cell.imgView.image = image;
-        jxImage.imageViewFrom = cell.imgView;
+        jxImage.imageViewFrom = cell.imgView;       // OPTIONAL
     }];
     return cell;
 }
@@ -87,6 +85,7 @@ UICollectionViewDataSource
 }
 
 @end
+
 
 
 

@@ -2,8 +2,8 @@
 //  SBFreeDetailCell.h
 //  JXImageBrowser
 //
-//  Created by shiba_iosJX on 11/4/15.
-//  Copyright © 2015 ShiBa. All rights reserved.
+//  Created by CoderSun on 4/3/16.
+//  Copyright © 2015 CoderSun. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -13,3 +13,12 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imgView;
 
 @end
+
+
+
+
+
+
+
+
+

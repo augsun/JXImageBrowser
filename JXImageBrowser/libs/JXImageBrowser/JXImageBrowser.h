@@ -1,9 +1,9 @@
 //
 //  JXImageViewer.h
-//  ShiBa
+//  JXImageBrowser
 //
-//  Created by shiba_iosJX on 4/21/16.
-//  Copyright © 2016 ShiBa. All rights reserved.
+//  Created by CoderSun on 4/21/16.
+//  Copyright © 2016 CoderSun. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -12,8 +12,8 @@
 #pragma mark - JXImage
 NS_CLASS_AVAILABLE_IOS(8_0) @interface JXImage : NSObject
 
-@property (nonatomic, strong) NSURL         *urlImg;            // 大图 url
-@property (nonatomic, strong) UIImageView   *imageViewFrom;     // 来源 imgView
+@property (nonatomic, strong) NSURL         *urlImg;            // (REQUIRE)  大图 url
+@property (nonatomic, strong) UIImageView   *imageViewFrom;     // (OPTIONAL) 来源 imgView
 
 @end
 

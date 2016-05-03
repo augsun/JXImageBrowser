@@ -2,8 +2,8 @@
 //  JXMomentCell.h
 //  JXImageBrowser
 //
-//  Created by shiba_iosJX on 11/3/15.
-//  Copyright © 2015 ShiBa. All rights reserved.
+//  Created by CoderSun on 4/3/16.
+//  Copyright © 2015 CoderSun. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -14,10 +14,6 @@
 @property (nonatomic, strong) JXMomentModel *model;
 
 @end
-
-
-
-
 
 
 

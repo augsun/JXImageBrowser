@@ -14,11 +14,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="169.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我叫奥特曼" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N1t-So-zab">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="我叫奥特曼" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N1t-So-zab">
                         <rect key="frame" x="66" y="30" width="246" height="20"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="20" id="46n-PK-dbN"/>
-                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="0.1529411765" green="0.1529411765" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -26,19 +23,16 @@
                             <userDefinedRuntimeAttribute type="boolean" keyPath="sbBlack" value="YES"/>
                         </userDefinedRuntimeAttributes>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="O34-rb-Th0">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O34-rb-Th0">
                         <rect key="frame" x="8" y="15" width="50" height="50"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="50" id="ICf-le-Ue9"/>
-                            <constraint firstAttribute="width" constant="50" id="YVC-1G-Ff6"/>
-                        </constraints>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                     </imageView>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="cRy-Sy-PMr">
-                        <rect key="frame" x="66" y="80" width="246" height="80"/>
+                        <rect key="frame" x="66" y="78" width="246" height="80"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="246" id="7Tk-nW-8T0"/>
-                            <constraint firstAttribute="height" constant="80" id="T4h-1c-Bi5"/>
+                            <constraint firstAttribute="height" constant="80" id="pBw-Ht-NQD"/>
+                            <constraint firstAttribute="width" constant="246" id="s2L-VN-3or"/>
                         </constraints>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="5eh-Sw-ut0">
                             <size key="itemSize" width="50" height="50"/>
@@ -52,20 +46,18 @@
                     </collectionView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="N1t-So-zab" secondAttribute="trailing" constant="8" id="9yq-1f-b1R"/>
-                    <constraint firstItem="O34-rb-Th0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="B58-Ur-qcz"/>
-                    <constraint firstItem="N1t-So-zab" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="30" id="L17-ws-qj1"/>
-                    <constraint firstItem="cRy-Sy-PMr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="66" id="Ns3-8h-9Q9"/>
-                    <constraint firstAttribute="bottom" secondItem="cRy-Sy-PMr" secondAttribute="bottom" constant="9.5" id="TEM-Lp-ZA9"/>
-                    <constraint firstItem="N1t-So-zab" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="66" id="VaT-nH-Ot7"/>
-                    <constraint firstItem="O34-rb-Th0" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="XV9-pM-si7"/>
+                    <constraint firstItem="cRy-Sy-PMr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="78" id="17S-PS-xQv"/>
+                    <constraint firstItem="cRy-Sy-PMr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="66" id="NKj-NX-Tz1"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="collectionView" destination="cRy-Sy-PMr" id="CJd-mk-dfh"/>
-                <outlet property="height_collectionView" destination="T4h-1c-Bi5" id="Rb3-Rl-X7L"/>
+                <outlet property="height_collView" destination="pBw-Ht-NQD" id="eKQ-aR-ThK"/>
+                <outlet property="imgViewPortrait" destination="O34-rb-Th0" id="CCi-I5-oGD"/>
                 <outlet property="lblName" destination="N1t-So-zab" id="7CI-BZ-8ZS"/>
-                <outlet property="width_collectionView" destination="7Tk-nW-8T0" id="RZS-Qs-j3z"/>
+                <outlet property="space_collViewToLeft" destination="NKj-NX-Tz1" id="8jr-vo-bAr"/>
+                <outlet property="space_collViewToTop" destination="17S-PS-xQv" id="VN7-gG-hjH"/>
+                <outlet property="width_collView" destination="s2L-VN-3or" id="zpL-NW-cbo"/>
             </connections>
             <point key="canvasLocation" x="361" y="179"/>
         </tableViewCell>

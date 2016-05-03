@@ -1,9 +1,9 @@
 //
 //  JXImageViewer.m
-//  ShiBa
+//  JXImageBrowser
 //
-//  Created by shiba_iosJX on 4/21/16.
-//  Copyright © 2016 ShiBa. All rights reserved.
+//  Created by CoderSun on 4/21/16.
+//  Copyright © 2016 CoderSun. All rights reserved.
 //
 
 #import "JXImageBrowser.h"
@@ -203,11 +203,9 @@ JX_IMAGE_BROWSER_DEALLOC_TEST
         
         CGRect imageViewFrame = CGRectZero;
         if (rImage < rSelf) {
-            // 满足 wSelf 情况下 > hSelf
             imageViewFrame = CGRectMake((_wSelf - _hSelf * rImage) / 2, 0, _hSelf * rImage, _hSelf);
         }
         else {
-            // 满足 wSelf 情况下 < hSelf
             imageViewFrame = CGRectMake(0, (_hSelf - _wSelf / rImage) / 2, _wSelf, _wSelf / rImage);
         }
         self.scrollView.contentSize = imageViewFrame.size;
@@ -286,8 +284,8 @@ JX_IMAGE_BROWSER_DEALLOC_TEST
         [self.delegate jxImageViewSingleTap];
         if (self.jxImage.imageViewFrom) {
             UIImage *imgTemp = self.jxImage.imageViewFrom.image;
+            self.jxImage.imageViewFrom.image = nil;
             if (self.jxImage.imageMax) {
-                self.jxImage.imageViewFrom.image = nil;
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.18f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                     self.imgView.image = imgTemp;
                 });
