@@ -56,18 +56,10 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
-    
-    [[SDImageCache sharedImageCache] cleanDisk];
-    [[SDImageCache sharedImageCache] clearDisk];
-
     UINavigationController *navi = [[UINavigationController alloc] initWithNavigationBarClass:[JXNavigationBar class]
                                                                                  toolbarClass:[UIToolbar class]];
     [navi addChildViewController:[[JXMomentVC alloc] init]];
     self.window.rootViewController = navi;
-
-    
-    
     return YES;
 }
 
