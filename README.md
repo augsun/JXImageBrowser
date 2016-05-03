@@ -24,7 +24,7 @@ NO BEST ONLY CLOSER.
 - It's very easy after you download DEMO. Don't long winded.
 
 ## License
-JXRollView is distributed under the terms and conditions of the [MIT LICENSE](http://rem.mit-license.org/).See LICENSE for details.
+JXImageBrowser is distributed under the terms and conditions of the [MIT LICENSE](http://rem.mit-license.org/).See LICENSE for details.
 
 ## Who Use It 
 [SHIBA](https://itunes.apple.com/cn/app/shi-ba-mian-fei-shi-yong-shi/id1073524695)
