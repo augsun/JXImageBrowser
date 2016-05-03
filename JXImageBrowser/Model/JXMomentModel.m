@@ -29,7 +29,7 @@
         
         //
         NSInteger           numTotal        = self.arrMinUrls.count;
-        const CGFloat       W_screen         = [UIScreen mainScreen].bounds.size.width;
+        const CGFloat       W_screen        = [UIScreen mainScreen].bounds.size.width;
         const NSInteger     N_per_Line      =  W_screen == 320.f ? 4 : W_screen == 375.f ? 5 : 6;
 
         CGFloat h_collView;
