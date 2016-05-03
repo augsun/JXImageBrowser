@@ -60,6 +60,9 @@
                                                                                  toolbarClass:[UIToolbar class]];
     [navi addChildViewController:[[JXMomentVC alloc] init]];
     self.window.rootViewController = navi;
+    
+    
+    
     return YES;
 }
 
