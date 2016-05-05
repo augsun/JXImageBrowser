@@ -9,7 +9,7 @@
 #import "JXImageBrowser.h"
 #import "UIImageView+WebCache.h"
 
-#define JX_IMAGE_BROWSER_DEALLOC_TEST   - (void)dealloc { NSLog(@"dealloc -> %@",NSStringFromClass([self class])); }
+//#define JX_IMAGE_BROWSER_DEALLOC_TEST   - (void)dealloc { NSLog(@"dealloc -> %@",NSStringFromClass([self class])); }
 
 #define SPA_INTERITEM               15          //
 #define PROG_BG_RADIUS              78.f        //
@@ -44,7 +44,7 @@
     return self;
 }
 
-JX_IMAGE_BROWSER_DEALLOC_TEST
+//JX_IMAGE_BROWSER_DEALLOC_TEST
 
 @end
 
@@ -340,7 +340,7 @@ JX_IMAGE_BROWSER_DEALLOC_TEST
     }
 }
 
-JX_IMAGE_BROWSER_DEALLOC_TEST
+//JX_IMAGE_BROWSER_DEALLOC_TEST
 
 @end
 
@@ -560,7 +560,7 @@ JXImageViewDelegate
     }];
 }
 
-JX_IMAGE_BROWSER_DEALLOC_TEST
+//JX_IMAGE_BROWSER_DEALLOC_TEST
 
 @end
 
