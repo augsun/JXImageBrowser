@@ -22,7 +22,7 @@ NO BEST ONLY CLOSER.
 ## Installation with CocoaPods 
 [CocoaPods](http://cocoapods.org) is a dependency manager for Objective-C, which automates and simplifies the process of using 3rd-party libraries like JXImageBrowser in your projects.You can install it with the following command:
 
-    pod 'JXImageBrowser', '1.0.2'
+    pod 'JXImageBrowser'
 
 ## Installation through manually
 

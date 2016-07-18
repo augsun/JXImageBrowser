@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7103761D1CCDFB5900CCAFD3 /* JXImageBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7103761C1CCDFB5900CCAFD3 /* JXImageBrowser.m */; };
 		7139484E1CD7A37E008F45DC /* JXMomentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 713948421CD7A37E008F45DC /* JXMomentVC.m */; };
 		7139484F1CD7A37E008F45DC /* JXMomentVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 713948431CD7A37E008F45DC /* JXMomentVC.xib */; };
 		713948501CD7A37E008F45DC /* JXMomentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 713948461CD7A37E008F45DC /* JXMomentModel.m */; };
@@ -20,14 +19,13 @@
 		71661E0A1CCD1A1500B33E78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71661E081CCD1A1500B33E78 /* Main.storyboard */; };
 		71661E0C1CCD1A1500B33E78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71661E0B1CCD1A1500B33E78 /* Assets.xcassets */; };
 		71661E0F1CCD1A1500B33E78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71661E0D1CCD1A1500B33E78 /* LaunchScreen.storyboard */; };
+		C88A28701D3CE29900E7AF86 /* JXImageBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = C88A286F1D3CE29900E7AF86 /* JXImageBrowser.m */; };
 		D3A91D008BC251650FC0ACB4 /* libPods-JXImageBrowser.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A4D8BBAC96D1F004E52A06FB /* libPods-JXImageBrowser.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0B9A2A2556EFFEC9D0F7CD23 /* Pods-JXImageBrowser.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JXImageBrowser.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JXImageBrowser/Pods-JXImageBrowser.debug.xcconfig"; sourceTree = "<group>"; };
 		4BEF73DAA76A6D1C4A324ED8 /* Pods-JXImageBrowser.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JXImageBrowser.release.xcconfig"; path = "Pods/Target Support Files/Pods-JXImageBrowser/Pods-JXImageBrowser.release.xcconfig"; sourceTree = "<group>"; };
-		7103761B1CCDFB5900CCAFD3 /* JXImageBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXImageBrowser.h; sourceTree = "<group>"; };
-		7103761C1CCDFB5900CCAFD3 /* JXImageBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXImageBrowser.m; sourceTree = "<group>"; };
 		713948411CD7A37E008F45DC /* JXMomentVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXMomentVC.h; sourceTree = "<group>"; };
 		713948421CD7A37E008F45DC /* JXMomentVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXMomentVC.m; sourceTree = "<group>"; };
 		713948431CD7A37E008F45DC /* JXMomentVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JXMomentVC.xib; sourceTree = "<group>"; };
@@ -48,6 +46,8 @@
 		71661E0E1CCD1A1500B33E78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		71661E101CCD1A1500B33E78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4D8BBAC96D1F004E52A06FB /* libPods-JXImageBrowser.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JXImageBrowser.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C88A286E1D3CE29900E7AF86 /* JXImageBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXImageBrowser.h; sourceTree = "<group>"; };
+		C88A286F1D3CE29900E7AF86 /* JXImageBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXImageBrowser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,23 +62,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		710376191CCDFB5900CCAFD3 /* libs */ = {
-			isa = PBXGroup;
-			children = (
-				7103761A1CCDFB5900CCAFD3 /* JXImageBrowser */,
-			);
-			path = libs;
-			sourceTree = "<group>";
-		};
-		7103761A1CCDFB5900CCAFD3 /* JXImageBrowser */ = {
-			isa = PBXGroup;
-			children = (
-				7103761B1CCDFB5900CCAFD3 /* JXImageBrowser.h */,
-				7103761C1CCDFB5900CCAFD3 /* JXImageBrowser.m */,
-			);
-			path = JXImageBrowser;
-			sourceTree = "<group>";
-		};
 		713948401CD7A37E008F45DC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,12 +115,12 @@
 		71661DFE1CCD1A1500B33E78 /* JXImageBrowser */ = {
 			isa = PBXGroup;
 			children = (
-				710376191CCDFB5900CCAFD3 /* libs */,
 				71661E021CCD1A1500B33E78 /* AppDelegate.h */,
 				71661E031CCD1A1500B33E78 /* AppDelegate.m */,
 				713948401CD7A37E008F45DC /* Controller */,
 				713948441CD7A37E008F45DC /* Model */,
 				713948471CD7A37E008F45DC /* View */,
+				C88A286D1D3CE29900E7AF86 /* JXImageBrowser */,
 				71661E081CCD1A1500B33E78 /* Main.storyboard */,
 				71661E0B1CCD1A1500B33E78 /* Assets.xcassets */,
 				71661E0D1CCD1A1500B33E78 /* LaunchScreen.storyboard */,
@@ -161,6 +144,16 @@
 				A4D8BBAC96D1F004E52A06FB /* libPods-JXImageBrowser.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C88A286D1D3CE29900E7AF86 /* JXImageBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				C88A286E1D3CE29900E7AF86 /* JXImageBrowser.h */,
+				C88A286F1D3CE29900E7AF86 /* JXImageBrowser.m */,
+			);
+			name = JXImageBrowser;
+			path = ../../JXImageBrowser;
 			sourceTree = "<group>";
 		};
 		F58540D482F79FF1E948C649 /* Pods */ = {
@@ -296,10 +289,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7103761D1CCDFB5900CCAFD3 /* JXImageBrowser.m in Sources */,
 				71661E041CCD1A1500B33E78 /* AppDelegate.m in Sources */,
 				713948501CD7A37E008F45DC /* JXMomentModel.m in Sources */,
 				7139484E1CD7A37E008F45DC /* JXMomentVC.m in Sources */,
+				C88A28701D3CE29900E7AF86 /* JXImageBrowser.m in Sources */,
 				71661E011CCD1A1500B33E78 /* main.m in Sources */,
 				713948531CD7A37E008F45DC /* JXMomentImageCell.m in Sources */,
 				713948511CD7A37E008F45DC /* JXMomentCell.m in Sources */,

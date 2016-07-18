@@ -9,6 +9,7 @@
 #import "JXImageBrowser.h"
 #import "UIImageView+WebCache.h"
 
+#define JX_IMAGE_BROWSER_DEALLOC_TEST
 //#define JX_IMAGE_BROWSER_DEALLOC_TEST   - (void)dealloc { NSLog(@"dealloc -> %@",NSStringFromClass([self class])); }
 
 #define SPA_INTERITEM               15          //
@@ -44,7 +45,7 @@
     return self;
 }
 
-//JX_IMAGE_BROWSER_DEALLOC_TEST
+JX_IMAGE_BROWSER_DEALLOC_TEST
 
 @end
 
@@ -90,11 +91,11 @@
         //
         _scrollView = [[UIScrollView alloc] initWithFrame:self.bounds];
         [self addSubview:_scrollView];
-        [_scrollView setDelegate:self];
         [_scrollView setShowsHorizontalScrollIndicator:NO];
         [_scrollView setShowsVerticalScrollIndicator:NO];
         [_scrollView setMaximumZoomScale:3.f];
         [_scrollView setMinimumZoomScale:1.f];
+        [_scrollView setDelegate:self];
         
         //
         _imgView = [[UIImageView alloc] initWithFrame:self.bounds];
@@ -123,8 +124,8 @@
         [self.layerHUD addSublayer:circleLayerBg];
         [circleLayerBg setPath:[UIBezierPath bezierPathWithRoundedRect:rectCircle cornerRadius:PROG_SHAP_RADIUS].CGPath];
         [circleLayerBg setStrokeColor:[[UIColor alloc] initWithWhite:1.f alpha:.1f].CGColor];
-        [circleLayerBg setFillColor:nil];
         [circleLayerBg setLineWidth:PROG_SHAP_W];
+        [circleLayerBg setFillColor:nil];
         [circleLayerBg setStrokeEnd:1.f];
         
         //
@@ -132,11 +133,11 @@
         [self.layerHUD addSublayer:_layerCircle];
         [_layerCircle setPath:[UIBezierPath bezierPathWithRoundedRect:rectCircle cornerRadius:PROG_SHAP_RADIUS].CGPath];
         [_layerCircle setStrokeColor:[[UIColor alloc] initWithWhite:1.f alpha:1.f].CGColor];
-        [_layerCircle setFillColor:nil];
-        [_layerCircle setLineWidth:PROG_SHAP_W];
-        [_layerCircle setLineCap:kCALineCapRound];
-        [_layerCircle setLineJoin:kCALineJoinRound];
         [_layerCircle setStrokeEnd:PROG_SHAP_STROKE_END_DEF];
+        [_layerCircle setLineJoin:kCALineJoinRound];
+        [_layerCircle setLineCap:kCALineCapRound];
+        [_layerCircle setLineWidth:PROG_SHAP_W];
+        [_layerCircle setFillColor:nil];
         
         //
         UITapGestureRecognizer *gesSingleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(gesSingleTap:)];
@@ -220,6 +221,7 @@
                 UIImage *imgTemp = self.jxImage.imageViewFrom.image;
                 self.jxImage.imageViewFrom.image = nil;
                 self.imgView.frame = [self.jxImage.imageViewFrom convertRect:self.jxImage.imageViewFrom.bounds toView:nil];
+                [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
                 
                 [UIView animateWithDuration:ANIM_DURATION animations:^{
                     self.imgView.frame = imageViewFrame;
@@ -239,6 +241,7 @@
             else {
                 self.imgView.alpha = .0f;
                 self.imgView.frame = imageViewFrame;
+                [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
                 [UIView animateWithDuration:ANIM_DURATION animations:^{
                     self.imgView.alpha = 1.f;
                 } completion:^(BOOL finished) {
@@ -340,7 +343,7 @@
     }
 }
 
-//JX_IMAGE_BROWSER_DEALLOC_TEST
+JX_IMAGE_BROWSER_DEALLOC_TEST
 
 @end
 
@@ -351,48 +354,43 @@ UIScrollViewDelegate,
 JXImageViewDelegate
 >
 
-@property (nonatomic, strong)   NSArray <JXImage *>             *arrImages;
-
-@property (nonatomic, assign)   NSUInteger                      currentIndex;
-@property (nonatomic, assign)   NSInteger                       numberImages;
+@property (nonatomic, copy)     NSArray <JXImage *>             *arrImages;
 
 @property (nonatomic, strong)   UIScrollView                    *scrollView;
+@property (nonatomic, strong)   NSMutableArray <JXImageView *>  *arrImageViews;
 @property (nonatomic, strong)   UIPageControl                   *pageCtl;
 
 @property (nonatomic, assign)   CGFloat                         wSelf;
 @property (nonatomic, assign)   CGFloat                         hSelf;
 
-@property (nonatomic, strong)   NSMutableArray <JXImageView *>  *arrImageViews;
+@property (nonatomic, assign)   NSUInteger                      currentIndex;
+@property (nonatomic, assign)   NSInteger                       numberImages;
+
 @property (nonatomic, assign)   CGFloat                         xOffsetPre;
 
 @end
 
 @implementation JXImageBrowser
 
-+ (void)browseImages:(NSArray <JXImage *> *)jxImages fromIndex:(NSInteger)fromIndex {
-    if (fromIndex < 0 || fromIndex >= jxImages.count) {
++ (void)browseImages:(NSArray <JXImage *> *)images fromIndex:(NSInteger)fromIndex {
+    if (fromIndex < 0 || fromIndex >= images.count) {
         return;
     }
     
-    for (NSInteger i = 0; i < jxImages.count; i ++) {
-        jxImages[i].indexItem = i;
-        jxImages[i].isFirstGrace = i == fromIndex;
-        NSLog(@"%d", jxImages[i].isFirstGrace);
+    for (NSInteger i = 0; i < images.count; i ++) {
+        images[i].indexItem = i;
+        images[i].isFirstGrace = i == fromIndex;
     }
     
     JXImageBrowser *imageBrowser = [[self alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    imageBrowser.arrImages = jxImages;
+    imageBrowser.arrImages = images;
     imageBrowser.currentIndex = fromIndex;
-    imageBrowser.numberImages = jxImages.count;
-    
+    imageBrowser.numberImages = images.count;
     imageBrowser.backgroundColor = [UIColor clearColor];
-    [[[UIApplication sharedApplication] keyWindow] addSubview:imageBrowser];
-    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
-    
+    [[UIApplication sharedApplication].keyWindow.rootViewController.view addSubview:imageBrowser];
     [UIView animateWithDuration:ANIM_DURATION animations:^{
         imageBrowser.backgroundColor = [UIColor blackColor];
     }];
-    
     [imageBrowser createComponents];
 }
 
@@ -506,21 +504,18 @@ JXImageViewDelegate
 }
 
 - (void)jxImageViewLongPress {
-    self.userInteractionEnabled = NO;
+    self.scrollView.userInteractionEnabled = NO;
     UIAlertController *alertCtl = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     UIAlertAction *actionSave = [UIAlertAction actionWithTitle:@"保存到手机" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         UIImageWriteToSavedPhotosAlbum(self.arrImages[self.currentIndex].imageMax, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
     }];
     UIAlertAction *actionCancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-        self.userInteractionEnabled = YES;
+        self.scrollView.userInteractionEnabled = YES;
     }];
     [alertCtl addAction:actionSave];
     [alertCtl addAction:actionCancel];
     
-    UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    [window makeKeyAndVisible];
-    [window setRootViewController:[[UIViewController alloc] init]];
-    [window.rootViewController presentViewController:alertCtl animated:YES completion:nil];
+    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alertCtl animated:YES completion:nil];
 }
 
 - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo {
@@ -555,12 +550,12 @@ JXImageViewDelegate
             viewHUD.alpha = .0f;
         } completion:^(BOOL finished) {
             [viewHUD removeFromSuperview];
-            self.userInteractionEnabled = YES;
+            self.scrollView.userInteractionEnabled = YES;
         }];
     }];
 }
 
-//JX_IMAGE_BROWSER_DEALLOC_TEST
+JX_IMAGE_BROWSER_DEALLOC_TEST
 
 @end
 
