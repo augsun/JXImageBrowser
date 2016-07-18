@@ -1,6 +1,6 @@
 
 <p align="center" >
-  <img src="https://raw.githubusercontent.com/augsun/JXImageBrowser/master/JXImageBrowser/Assets.xcassets/AppIcon.appiconset/JXImageBrowser_180.png" alt="JXImageBrowser" title="JXImageBrowser">
+  <img src="https://raw.githubusercontent.com/augsun/JXImageBrowser/master/JXImageBrowserSample/JXImageBrowser/Assets.xcassets/AppIcon.appiconset/JXImageBrowser_180.png" alt="JXImageBrowser" title="JXImageBrowser">
 </p>
 
 <p align="center" >
