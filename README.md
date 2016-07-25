@@ -34,7 +34,3 @@ NO BEST ONLY CLOSER.
 
 ## License
 JXImageBrowser is distributed under the terms and conditions of the [MIT LICENSE](http://rem.mit-license.org/).
-
-<p align="right" >
-Thank you very much for reading again.
-</p>
