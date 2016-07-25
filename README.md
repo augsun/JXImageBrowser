@@ -1,4 +1,3 @@
-
 <p align="center" >
   <img src="https://raw.githubusercontent.com/augsun/JXImageBrowser/master/JXImageBrowserSample/JXImageBrowser/Assets.xcassets/AppIcon.appiconset/JXImageBrowser_180.png" alt="JXImageBrowser" title="JXImageBrowser">
 </p>
@@ -25,7 +24,6 @@ NO BEST ONLY CLOSER.
     pod 'JXImageBrowser'
 
 ## Installation through manually
-
 
 1. Download the [latest version](https://github.com/augsun/JXImageBrowser/archive/master.zip).
 
