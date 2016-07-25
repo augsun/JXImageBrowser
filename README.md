@@ -35,9 +35,6 @@ NO BEST ONLY CLOSER.
 ## License
 JXImageBrowser is distributed under the terms and conditions of the [MIT LICENSE](http://rem.mit-license.org/).
 
-## Who Use It 
-[SHIBA](https://itunes.apple.com/cn/app/shi-ba-mian-fei-shi-yong-shi/id1073524695)
-
 <p align="right" >
 Thank you very much for reading again.
 </p>
