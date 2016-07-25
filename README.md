@@ -26,6 +26,7 @@ NO BEST ONLY CLOSER.
 
 ## Installation through manually
 
+
 1. Download the [latest version](https://github.com/augsun/JXImageBrowser/archive/master.zip).
 
 2. Open your project in Xcode, then drag and drop `JXImageBrowser.h` and `JXImageBrowser.m` onto your project (use the "Product Navigator view"). Make sure to select Copy items when asked if you extracted the code archive outside of your project.
