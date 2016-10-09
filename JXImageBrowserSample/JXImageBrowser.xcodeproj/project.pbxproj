@@ -20,6 +20,7 @@
 		71661E0C1CCD1A1500B33E78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71661E0B1CCD1A1500B33E78 /* Assets.xcassets */; };
 		71661E0F1CCD1A1500B33E78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71661E0D1CCD1A1500B33E78 /* LaunchScreen.storyboard */; };
 		C88A28701D3CE29900E7AF86 /* JXImageBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = C88A286F1D3CE29900E7AF86 /* JXImageBrowser.m */; };
+		C8FF43121DAA3D2800C5811B /* JXImageBrowser.podspec in Resources */ = {isa = PBXBuildFile; fileRef = C8FF43111DAA3D2800C5811B /* JXImageBrowser.podspec */; };
 		D3A91D008BC251650FC0ACB4 /* libPods-JXImageBrowser.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A4D8BBAC96D1F004E52A06FB /* libPods-JXImageBrowser.a */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,7 @@
 		A4D8BBAC96D1F004E52A06FB /* libPods-JXImageBrowser.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JXImageBrowser.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C88A286E1D3CE29900E7AF86 /* JXImageBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXImageBrowser.h; sourceTree = "<group>"; };
 		C88A286F1D3CE29900E7AF86 /* JXImageBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXImageBrowser.m; sourceTree = "<group>"; };
+		C8FF43111DAA3D2800C5811B /* JXImageBrowser.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = JXImageBrowser.podspec; path = ../../JXImageBrowser.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 		71661DFF1CCD1A1500B33E78 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C8FF43111DAA3D2800C5811B /* JXImageBrowser.podspec */,
 				71661E001CCD1A1500B33E78 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -227,6 +230,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8FF43121DAA3D2800C5811B /* JXImageBrowser.podspec in Resources */,
 				71661E0F1CCD1A1500B33E78 /* LaunchScreen.storyboard in Resources */,
 				71661E0C1CCD1A1500B33E78 /* Assets.xcassets in Resources */,
 				7139484F1CD7A37E008F45DC /* JXMomentVC.xib in Resources */,
