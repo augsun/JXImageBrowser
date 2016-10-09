@@ -15,13 +15,13 @@ NS_CLASS_AVAILABLE_IOS(8_0) @interface JXImage : NSObject
  *  Url of image.
  *  图片的 url.
  */
-@property (nonatomic, strong) NSURL         *urlImg;
+@property (nonatomic, strong) NSURL *urlImg;
 
 /**
  *  ImageView from.(option)
  *  图片的来源 imageView.(可不传)
  */
-@property (nonatomic, strong) UIImageView   *imageViewFrom;
+@property (nonatomic, strong) UIImageView *imageViewFrom;
 
 @end
 

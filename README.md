@@ -18,6 +18,14 @@ Image browser.
 NO BEST ONLY CLOSER.
 </p>
 
+
+
+```
+You need add "Privacy - Photo Library Usage Description" to Info.plist. 
+Otherwise, 
+it may be the crashing problem of privacy key setting which is mandatory in ios10 and xcode 8.
+```
+
 ## Installation with CocoaPods 
 [CocoaPods](http://cocoapods.org) is a dependency manager for Objective-C, which automates and simplifies the process of using 3rd-party libraries like JXImageBrowser in your projects.You can install it with the following command:
 
@@ -32,3 +40,4 @@ NO BEST ONLY CLOSER.
 
 ## License
 JXImageBrowser is distributed under the terms and conditions of the [MIT LICENSE](http://rem.mit-license.org/).
+

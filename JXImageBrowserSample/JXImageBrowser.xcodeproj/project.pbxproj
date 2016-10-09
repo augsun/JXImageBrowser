@@ -40,7 +40,7 @@
 		71661DFC1CCD1A1500B33E78 /* JXImageBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JXImageBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71661E001CCD1A1500B33E78 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		71661E021CCD1A1500B33E78 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		71661E031CCD1A1500B33E78 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		71661E031CCD1A1500B33E78 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = JXImageBrowser/AppDelegate.m; sourceTree = SOURCE_ROOT; };
 		71661E091CCD1A1500B33E78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		71661E0B1CCD1A1500B33E78 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		71661E0E1CCD1A1500B33E78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -199,6 +199,8 @@
 				TargetAttributes = {
 					71661DFB1CCD1A1500B33E78 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 9W9Y3C66TM;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -408,11 +410,14 @@
 			baseConfigurationReference = 0B9A2A2556EFFEC9D0F7CD23 /* Pods-JXImageBrowser.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9W9Y3C66TM;
 				INFOPLIST_FILE = JXImageBrowser/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = CoderSun.JXImageBrowser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "0d5a0592-58de-4c82-bd7d-407bb97ee5f3";
+				PROVISIONING_PROFILE_SPECIFIER = prov_wildcard;
 			};
 			name = Debug;
 		};
@@ -421,6 +426,7 @@
 			baseConfigurationReference = 4BEF73DAA76A6D1C4A324ED8 /* Pods-JXImageBrowser.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = JXImageBrowser/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
