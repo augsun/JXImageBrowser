@@ -417,8 +417,7 @@ static JXImageBrowser *imageBrowser_;
         
         self.bgVC = [[JXViewController alloc] init];
         self.bgWindow.rootViewController = self.bgVC;
-        [self.bgWindow makeKeyAndVisible];
-        
+        self.bgWindow.hidden = NO;
         
         self.images = images;
         self.currentIndex = fromIndex;
@@ -426,7 +425,6 @@ static JXImageBrowser *imageBrowser_;
         self.bgView = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
         self.bgView.backgroundColor = [UIColor clearColor];
         [self.bgWindow.rootViewController.view addSubview:self.bgView];
-        
     }
     return self;
 }
