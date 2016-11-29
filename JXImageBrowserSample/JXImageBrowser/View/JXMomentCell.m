@@ -32,6 +32,7 @@
 @implementation JXMomentCell
 
 - (void)awakeFromNib {
+    [super awakeFromNib];
     UINib *nibCollCell = [UINib nibWithNibName:NSStringFromClass([JXMomentImageCell class]) bundle:nil];
     [_collectionView registerNib:nibCollCell forCellWithReuseIdentifier:@"collCell"];
     _collectionView.delegate = self;
@@ -39,10 +40,6 @@
     
     _space_collViewToTop.constant = S_COLL_TO_TOP;
     _space_collViewToLeft.constant = S_COLL_TO_LEFT;
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
 }
 
 #pragma mark
