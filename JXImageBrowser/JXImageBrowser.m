@@ -166,7 +166,7 @@ JX_IMAGE_BROWSER_DEALLOC_TEST
         self.layerCircle.strokeEnd = self.jxImage.progressDownload;
         self.imgView.image = jxImage.imageViewFrom.image;
         [self reFrameImageView];
-        [[SDWebImageManager sharedManager] downloadImageWithURL:self.jxImage.urlImg options:SDWebImageRetryFailed progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+        [[SDWebImageManager sharedManager] loadImageWithURL:self.jxImage.urlImg options:SDWebImageRetryFailed progress:^(NSInteger receivedSize, NSInteger expectedSize, NSURL * _Nullable targetURL) {
             CGFloat percent = 1.f * receivedSize / expectedSize;
             if (self.jxImage.indexItem == jxImage.indexItem && self.jxImage.progressDownload < percent) {
                 self.layerCircle.strokeEnd = percent;
@@ -176,7 +176,7 @@ JX_IMAGE_BROWSER_DEALLOC_TEST
                     jxImage.progressDownload = percent;
                 }
             }
-        } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+        } completed:^(UIImage * _Nullable image, NSData * _Nullable data, NSError * _Nullable error, SDImageCacheType cacheType, BOOL finished, NSURL * _Nullable imageURL) {
             if (image && finished) {
                 jxImage.imageMax = image;
                 if (self.jxImage.indexItem == jxImage.indexItem) {
