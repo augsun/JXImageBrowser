@@ -84,35 +84,35 @@ JX_IMAGE_BROWSER_DEALLOC_TEST
     if (self = [super initWithFrame:frame]) {
         
         //
-        [self setClipsToBounds:YES];
-        [self setWSelf:self.frame.size.width];
-        [self setHSelf:self.frame.size.height];
+        self.clipsToBounds = YES;
+        self.wSelf = self.frame.size.width;
+        self.hSelf = self.frame.size.height;
         
         //
-        _scrollView = [[UIScrollView alloc] initWithFrame:self.bounds];
-        [self addSubview:_scrollView];
-        [_scrollView setShowsHorizontalScrollIndicator:NO];
-        [_scrollView setShowsVerticalScrollIndicator:NO];
-        [_scrollView setMaximumZoomScale:3.f];
-        [_scrollView setMinimumZoomScale:1.f];
-        [_scrollView setDelegate:self];
+        self.scrollView = [[UIScrollView alloc] initWithFrame:self.bounds];
+        [self addSubview:self.scrollView];
+        self.scrollView.showsHorizontalScrollIndicator = NO;
+        self.scrollView.showsVerticalScrollIndicator = NO;
+        self.scrollView.maximumZoomScale = 3.f;
+        self.scrollView.minimumZoomScale = 1.f;
+        self.scrollView.delegate = self;
         
         //
-        _imgView = [[UIImageView alloc] initWithFrame:self.bounds];
-        [self.scrollView addSubview:_imgView];
-        [_imgView setContentMode:UIViewContentModeScaleAspectFill];
-        [_imgView setUserInteractionEnabled:YES];
-        [_imgView setClipsToBounds:YES];
+        self.imgView = [[UIImageView alloc] initWithFrame:self.bounds];
+        [self.scrollView addSubview:self.imgView];
+        self.imgView.contentMode = UIViewContentModeScaleAspectFill;
+        self.imgView.userInteractionEnabled = YES;
+        self.imgView.clipsToBounds = YES;
         
         //
-        _layerHUD = [CALayer layer];
-        [self.layer addSublayer:_layerHUD];
-        [_layerHUD setCornerRadius:10.f];
-        [_layerHUD setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:.8f].CGColor];
-        [_layerHUD setFrame:CGRectMake((self.frame.size.width - kProgressBackgroundRadius) / 2,
-                                       (self.frame.size.height - kProgressBackgroundRadius) / 2,
-                                       kProgressBackgroundRadius,
-                                       kProgressBackgroundRadius)];
+        self.layerHUD = [CALayer layer];
+        [self.layer addSublayer:self.layerHUD];
+        self.layerHUD.cornerRadius = 10.f;
+        self.layerHUD.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:.8f].CGColor;
+        self.layerHUD.frame = CGRectMake((self.frame.size.width - kProgressBackgroundRadius) / 2,
+                                         (self.frame.size.height - kProgressBackgroundRadius) / 2,
+                                         kProgressBackgroundRadius,
+                                         kProgressBackgroundRadius);
         
         CGRect rectCircle = CGRectMake((kProgressBackgroundRadius - kProgressShapRadius * 2) / 2,
                                        (kProgressBackgroundRadius - kProgressShapRadius * 2) / 2,
@@ -129,15 +129,16 @@ JX_IMAGE_BROWSER_DEALLOC_TEST
         [circleLayerBg setStrokeEnd:1.f];
         
         //
-        _layerCircle = [CAShapeLayer layer];
-        [self.layerHUD addSublayer:_layerCircle];
-        [_layerCircle setPath:[UIBezierPath bezierPathWithRoundedRect:rectCircle cornerRadius:kProgressShapRadius].CGPath];
-        [_layerCircle setStrokeColor:[[UIColor alloc] initWithWhite:1.f alpha:1.f].CGColor];
-        [_layerCircle setStrokeEnd:kProgressShapStrokeEndDefault];
-        [_layerCircle setLineJoin:kCALineJoinRound];
-        [_layerCircle setLineCap:kCALineCapRound];
-        [_layerCircle setLineWidth:kProgressShapWidth];
-        [_layerCircle setFillColor:nil];
+        self.layerCircle = [CAShapeLayer layer];
+        [self.layerHUD addSublayer:self.layerCircle];
+        self.layerCircle.path = [UIBezierPath bezierPathWithRoundedRect:rectCircle cornerRadius:kProgressShapRadius].CGPath;
+        self.layerCircle.strokeColor = [[UIColor alloc] initWithWhite:1.f alpha:1.f].CGColor;
+        self.layerCircle.lineWidth = kProgressShapWidth;
+        self.layerCircle.fillColor = nil;
+        self.layerCircle.strokeEnd = kProgressShapStrokeEndDefault;
+        
+        self.layerCircle.lineJoin = kCALineJoinRound;
+        self.layerCircle.lineCap = kCALineCapRound;
         
         //
         UITapGestureRecognizer *gesSingleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(gesSingleTap:)];
@@ -167,18 +168,24 @@ JX_IMAGE_BROWSER_DEALLOC_TEST
         self.imgView.image = jxImage.imageViewFrom.image;
         [self reFrameImageView];
         [[SDWebImageManager sharedManager] loadImageWithURL:self.jxImage.urlImg options:SDWebImageRetryFailed progress:^(NSInteger receivedSize, NSInteger expectedSize, NSURL * _Nullable targetURL) {
+            
             CGFloat percent = 1.f * receivedSize / expectedSize;
-            if (self.jxImage.indexItem == jxImage.indexItem && self.jxImage.progressDownload < percent) {
-                self.layerCircle.strokeEnd = percent;
-            }
-            else {
-                if (jxImage.progressDownload < percent) {
-                    jxImage.progressDownload = percent;
+            if (percent >= jxImage.progressDownload) {
+                jxImage.progressDownload = percent;
+                
+                if (self.jxImage.indexItem == jxImage.indexItem) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [UIView animateWithDuration:.25f animations:^{
+                            self.layerCircle.strokeEnd = percent;
+                        }];
+                    });
                 }
             }
         } completed:^(UIImage * _Nullable image, NSData * _Nullable data, NSError * _Nullable error, SDImageCacheType cacheType, BOOL finished, NSURL * _Nullable imageURL) {
+            
             if (image && finished) {
                 jxImage.imageMax = image;
+                jxImage.progressDownload = 1.f;
                 if (self.jxImage.indexItem == jxImage.indexItem) {
                     self.layerHUD.hidden = YES;
                     self.imgView.image = image;
@@ -435,18 +442,18 @@ static JXImageBrowser *imageBrowser_;
     self.imgViews = [[NSMutableArray alloc] init];
     
     //
-    _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, _wSelf + kInteritemSpace, _hSelf)];
-    [self.bgView addSubview:_scrollView];
-    [_scrollView setContentSize:CGSizeMake(self.numberImages * (_wSelf + kInteritemSpace), _hSelf)];
-    [_scrollView setContentOffset:CGPointMake(self.currentIndex * (_wSelf + kInteritemSpace), 0)];
-    [_scrollView setShowsHorizontalScrollIndicator:NO];
-    [_scrollView setShowsVerticalScrollIndicator:NO];
-    [_scrollView setAlwaysBounceHorizontal:YES];
-    [_scrollView setAlwaysBounceVertical:NO];
-    [_scrollView setPagingEnabled:YES];
-    [_scrollView setScrollsToTop:NO];
-    [_scrollView setDelegate:self];
-    [_scrollView setBounces:YES];
+    self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, _wSelf + kInteritemSpace, _hSelf)];
+    [self.bgView addSubview:self.scrollView];
+    self.scrollView.contentSize = CGSizeMake(self.numberImages * (self.wSelf + kInteritemSpace), self.hSelf);
+    self.scrollView.contentOffset = CGPointMake(self.currentIndex * (self.wSelf + kInteritemSpace), 0);
+    self.scrollView.showsHorizontalScrollIndicator = NO;
+    self.scrollView.showsVerticalScrollIndicator = NO;
+    self.scrollView.alwaysBounceHorizontal = YES;
+    self.scrollView.alwaysBounceVertical = NO;
+    self.scrollView.pagingEnabled = YES;
+    self.scrollView.scrollsToTop = NO;
+    self.scrollView.delegate = self;
+    self.scrollView.bounces = YES;
     
     NSInteger fromIndexRefresh = 0;
     NSInteger imageViewCount = (self.numberImages > 2 ? 3 : self.numberImages);
@@ -471,13 +478,11 @@ static JXImageBrowser *imageBrowser_;
     }
     
     //
-    _pageCtl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, _hSelf - 50, _wSelf, 50)];
-    [self.bgView addSubview:_pageCtl];
-    [_pageCtl setNumberOfPages:self.numberImages];
-    [_pageCtl setCurrentPage:self.currentIndex];
-    [_pageCtl setUserInteractionEnabled:NO];
-    
-    
+    self.pageCtl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, _hSelf - 50, _wSelf, 50)];
+    [self.bgView addSubview:self.pageCtl];
+    self.pageCtl.numberOfPages = self.numberImages;
+    self.pageCtl.currentPage = self.currentIndex;
+    self.pageCtl.userInteractionEnabled = NO;
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
