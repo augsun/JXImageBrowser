@@ -564,19 +564,22 @@ static JXImageBrowser *imageBrowser_;
             case ALAuthorizationStatusDenied:
             {
                 UIAlertController *alertNoAuth = [UIAlertController alertControllerWithTitle:@"无法保存" message:@"请前往\"设置-隐私-照片\"选项中，允许访问您的照片。" preferredStyle:UIAlertControllerStyleAlert];
-                UIAlertAction *acCalcel = [UIAlertAction actionWithTitle:@"好" style:UIAlertActionStyleCancel handler:nil];
-                //            UIAlertAction *acCalcel = [UIAlertAction actionWithTitle:@"取消"
-                //                                                               style:UIAlertActionStyleCancel
-                //                                                             handler:nil];
-                //            UIAlertAction *acToOpen = [UIAlertAction actionWithTitle:@"前往设置"
-                //                                                               style:UIAlertActionStyleDefault
-                //                                                             handler:^(UIAlertAction * _Nonnull action) {
-                //                 dispatch_async(dispatch_get_main_queue(), ^{
-                //                     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
-                //                 });
-                //            }];
+#if 0
+                UIAlertAction *acCalcel = [UIAlertAction actionWithTitle:@"取消"
+                                                                   style:UIAlertActionStyleCancel
+                                                                 handler:nil];
+                UIAlertAction *acToOpen = [UIAlertAction actionWithTitle:@"前往设置"
+                                                                   style:UIAlertActionStyleDefault
+                                                                 handler:^(UIAlertAction * _Nonnull action) {
+                                                                     dispatch_async(dispatch_get_main_queue(), ^{
+                                                                         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
+                                                                     });
+                                                                 }];
                 [alertNoAuth addAction:acCalcel];
-                //            [alertNoAuth addAction:acToOpen];
+                [alertNoAuth addAction:acToOpen];
+#endif
+                UIAlertAction *acCalcel = [UIAlertAction actionWithTitle:@"好" style:UIAlertActionStyleCancel handler:nil];
+                [alertNoAuth addAction:acCalcel];
                 [imageBrowser_.bgWindow.rootViewController presentViewController:alertNoAuth animated:YES completion:nil];
             } break;
                 
