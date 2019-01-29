@@ -1,4 +1,5 @@
-## !!! `JXImageBrowser` 已经不单独更新了~ `JXImageBrowser` 已经归并入 `JXEfficient` [点击传送](https://github.com/augsun/JXEfficient) !!!
+## !!! `JXImageBrowser` 已经不单独更新了~ 
+## !!! `JXImageBrowser` 已经归并入 `JXEfficient` [点击传送](https://github.com/augsun/JXEfficient) !!!
 
 <p align="center" >
   <img src="https://raw.githubusercontent.com/augsun/JXImageBrowser/master/JXImageBrowserSample/JXImageBrowser/Assets.xcassets/AppIcon.appiconset/JXImageBrowser_180.png" alt="JXImageBrowser" title="JXImageBrowser">
